@@ -1,0 +1,52 @@
+{
+  "name": "rewrite-ext",
+  "description": "Automatically re-write the destination extension of a filepath based on the source extension. e.g  `.coffee` => `.js`. This will only rename the ext, no other path parts are modified.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/rewrite-ext",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/rewrite-ext.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/rewrite-ext/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/rewrite-ext/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": [
+    "dest",
+    "ext",
+    "extensions",
+    "extname",
+    "file",
+    "filename",
+    "filepath",
+    "fp",
+    "fs",
+    "gulpfriendly",
+    "map",
+    "path",
+    "src"
+  ],
+  "dependencies": {
+    "ext-map": "^0.1.0"
+  }
+}
