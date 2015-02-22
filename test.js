@@ -1,8 +1,8 @@
 /*!
  * rewrite-ext <https://github.com/jonschlinkert/rewrite-ext>
  *
- * Copyright (c) 2014 Jon Schlinkert
- * Licensed under the MIT license
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
  */
 
 'use strict';
@@ -28,8 +28,8 @@ describe('ext', function () {
 
   describe('explicitly defined:', function () {
     it('should use the extension defined by the user.', function () {
-      rewrite('./faux.js', '.foo').should.equal('faux.foo');
-      rewrite('./faux.js', '.bar').should.equal('faux.bar');
+      rewrite('./faux.js', '.foo').should.equal('./faux.foo');
+      rewrite('./faux.js', '.bar').should.equal('./faux.bar');
     });
   });
 
