@@ -3,14 +3,9 @@
   "description": "Automatically re-write the destination extension of a filepath based on the source extension. e.g  `.coffee` => `.js`. This will only rename the ext, no other path parts are modified.",
   "version": "0.2.0",
   "homepage": "https://github.com/jonschlinkert/rewrite-ext",
-  "author": {
-    "name": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert"
-  },
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/rewrite-ext",
-  "bugs": {
-    "url": "https://github.com/jonschlinkert/rewrite-ext/issues"
-  },
+  "bugs": "https://github.com/jonschlinkert/rewrite-ext/issues",
   "license": "MIT",
   "files": [
     "index.js"
@@ -43,5 +38,10 @@
     "map",
     "path",
     "src"
-  ]
+  ],
+  "verb": {
+    "related": {
+      "list": []
+    }
+  }
 }
