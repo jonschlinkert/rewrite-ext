@@ -5,7 +5,9 @@
   "homepage": "https://github.com/jonschlinkert/rewrite-ext",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/rewrite-ext",
-  "bugs": "https://github.com/jonschlinkert/rewrite-ext/issues",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/rewrite-ext/issues"
+  },
   "license": "MIT",
   "files": [
     "index.js"
@@ -18,11 +20,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "ext-map": "^1.0.0"
+    "ext-map": "^1.0.1",
+    "extend-shallow": "^2.0.1"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+    "gulp-format-md": "^0.1.11",
+    "mocha": "^3.2.0"
   },
   "keywords": [
     "dest",
@@ -37,11 +40,27 @@
     "gulpfriendly",
     "map",
     "path",
+    "rewrite",
     "src"
   ],
   "verb": {
     "related": {
-      "list": []
+      "list": [
+        "file-normalize",
+        "parse-filepath",
+        "fs-utils"
+      ]
+    },
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
     }
   }
 }
