@@ -1,23 +1,43 @@
 /*!
  * rewrite-ext <https://github.com/jonschlinkert/rewrite-ext>
  *
- * Copyright (c) 2014-2015, Jon Schlinkert.
- * Licensed under the MIT License.
+ * Copyright (c) 2014-2015, 2017, Jon Schlinkert.
+ * Released under the MIT License.
  */
 
 'use strict';
 
 var path = require('path');
-var exts = require('ext-map');
+var extend = require('extend-shallow');
+var extMap = require('ext-map');
 
-module.exports = function rewrite(fp, ext) {
-  var extname = path.extname(fp);
-  var len = extname.length;
+module.exports = function rewriteExt(filepath, options) {
+  if (typeof options === 'string') {
+    options = { ext: options };
+  }
 
-  ext = ext || exts[extname] || extname;
-  if (ext.charAt(0) !== '.') {
+  var opts = extend({}, options);
+  var extname = path.extname(filepath);
+  var ext = opts.ext || '';
+
+  if (opts.mapExt) {
+    var exts = extend({}, extMap, opts.extMap);
+    ext = exts[extname];
+  }
+
+  if (!ext) {
+    ext = extname;
+  }
+
+  if (ext && ext.charAt(0) !== '.') {
     ext = '.' + ext;
   }
 
-  return fp.slice(0, fp.length - len) + ext;
+  var re = opts.extDot !== 'last' ? /(\.[^\/]*)?$/ : /(\.[^\/\.]*)?$/;
+  filepath = filepath.replace(re, ext);
+  if (filepath.slice(-1) === '.') {
+    filepath = filepath.slice(0, -1);
+  }
+
+  return filepath;
 };
